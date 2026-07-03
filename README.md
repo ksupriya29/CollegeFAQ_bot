@@ -1,3 +1,4 @@
+
 # BVRIT Hyderabad College FAQ Chatbot
 
 A **Retrieval-Augmented Generation (RAG)** chatbot that answers questions about BVRIT Hyderabad College of Engineering for Women. Built with LangChain, ChromaDB, OpenAI embeddings, and Streamlit.
@@ -144,3 +145,6 @@ User Query + Retrieved Chunks → LLM (GPT-4o Mini) → Grounded Answer + Citati
 ## License
 
 Built with ❤️ for the GenAI & Agentic AI Engineering Programme.
+=======
+# CollegeFAQ_bot
+

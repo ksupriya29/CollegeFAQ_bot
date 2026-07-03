@@ -1,0 +1,32 @@
+# Virtual environment
+venv/
+.venv/
+env/
+
+# ChromaDB vector store
+chroma_db/
+
+# Environment variables
+.env
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Test reports
+reports/
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Dist/egg info
+*.egg-info/
+dist/
+build/

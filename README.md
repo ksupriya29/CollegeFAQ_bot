@@ -144,7 +144,13 @@ User Query + Retrieved Chunks → LLM (GPT-4o Mini) → Grounded Answer + Citati
 
 ## License
 
-Built with ❤️ for the GenAI & Agentic AI Engineering Programme.
+
+This project is licensed under the MIT License. See the LICENSE file for details.
+
+## Acknowledgements
+
+Built with ❤️ as part of the GenAI & Agentic AI Engineering Programme.
+
 =======
 # CollegeFAQ_bot
 

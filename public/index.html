@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BVRIT Hyderabad - FAQ Chatbot</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Sidebar -->
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <div class="logo">
+                    <img src="logo.jpg" alt="BVRIT Logo" class="logo-img">
+                    <span>BVRIT Bot</span>
+                </div>
+                <button class="close-sidebar" id="closeSidebar"><i class="fas fa-times"></i></button>
+            </div>
+            <div class="sidebar-content">
+                <div class="quick-actions">
+                    <h3>Quick Actions</h3>
+                    <button class="action-btn" onclick="askQuestion('Tell me about BVRIT Hyderabad')">
+                        <i class="fas fa-university"></i> About BVRIT
+                    </button>
+                    <button class="action-btn" onclick="askQuestion('What are the admission requirements for BVRIT?')">
+                        <i class="fas fa-file-alt"></i> Admission Requirements
+                    </button>
+                    <button class="action-btn" onclick="askQuestion('What is the fee structure at BVRIT?')">
+                        <i class="fas fa-rupee-sign"></i> Fee Structure
+                    </button>
+                    <button class="action-btn" onclick="askQuestion('What courses are offered at BVRIT?')">
+                        <i class="fas fa-book-open"></i> Courses Offered
+                    </button>
+                    <button class="action-btn" onclick="askQuestion('What is the placement record at BVRIT?')">
+                        <i class="fas fa-briefcase"></i> Placement Record
+                    </button>
+                    <button class="action-btn" onclick="askQuestion('What are the hostel facilities at BVRIT?')">
+                        <i class="fas fa-hotel"></i> Hostel Facilities
+                    </button>
+                    <button class="action-btn" onclick="askQuestion('How to apply for scholarships at BVRIT?')">
+                        <i class="fas fa-trophy"></i> Scholarships
+                    </button>
+                    <button class="action-btn" onclick="askQuestion('BVRIT Hyderabad location and contact')">
+                        <i class="fas fa-map-marker-alt"></i> Location & Contact
+                    </button>
+                </div>
+                <div class="sidebar-stats">
+                    <h3>Bot Info</h3>
+                    <p><i class="fas fa-database"></i> <span id="faqCount">0</span> FAQs loaded</p>
+                    <p><i class="fas fa-globe"></i> <a href="https://bvrithyderabad.edu.in/" target="_blank" style="color: #a29bfe; text-decoration: none;">bvrithyderabad.edu.in</a></p>
+                    <p><i class="fas fa-comments"></i> Ask me anything about BVRIT!</p>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Top Bar -->
+            <header class="top-bar">
+                <button class="hamburger" id="hamburger"><i class="fas fa-bars"></i></button>
+                <div class="top-bar-title">
+                    <img src="logo.jpg" alt="BVRIT Logo" class="topbar-logo-img">
+                    <h1>BVRIT Hyderabad FAQ Assistant</h1>
+                </div>
+                <div class="top-bar-actions">
+                    <button class="theme-toggle" id="themeToggle"><i class="fas fa-moon"></i></button>
+                    <button class="clear-chat" id="clearChat"><i class="fas fa-trash-alt"></i></button>
+                </div>
+            </header>
+
+            <!-- Chat Container -->
+            <div class="chat-container" id="chatContainer">
+                <div class="welcome-message" id="welcomeMessage">
+                    <div class="welcome-icon"><i class="fas fa-robot"></i></div>
+                    <h2>Welcome to BVRIT Hyderabad FAQ Assistant! 🎓</h2>
+                    <p>I'm here to help answer your questions about <strong>BVRIT Hyderabad College of Engineering for Women</strong>. Ask me about admissions, courses, fees, placements, campus facilities, and more!</p>
+                    <div class="welcome-suggestions">
+                        <span class="suggestion-chip" onclick="askQuestion('Tell me about BVRIT Hyderabad')">🏛️ About BVRIT</span>
+                        <span class="suggestion-chip" onclick="askQuestion('What are the admission requirements?')">🎓 Admission</span>
+                        <span class="suggestion-chip" onclick="askQuestion('What is the fee structure?')">💰 Fees</span>
+                        <span class="suggestion-chip" onclick="askQuestion('What courses are offered?')">📚 Courses</span>
+                        <span class="suggestion-chip" onclick="askQuestion('What is the placement record?')">💼 Placement</span>
+                        <span class="suggestion-chip" onclick="askQuestion('BVRIT Hyderabad location')">📍 Location</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Input Area -->
+            <div class="input-area">
+                <div class="input-wrapper">
+                    <button class="voice-btn" id="voiceBtn" title="Voice input">
+                        <i class="fas fa-microphone"></i>
+                    </button>
+                    <input type="text" id="userInput" placeholder="Ask about BVRIT Hyderabad..." autocomplete="off">
+                    <button class="send-btn" id="sendBtn" title="Send message">
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
+                </div>
+                <p class="disclaimer">This bot provides general information about BVRIT Hyderabad. For specific queries, visit <a href="https://bvrithyderabad.edu.in/" target="_blank">bvrithyderabad.edu.in</a> or contact the college administration.</p>
+            </div>
+        </main>
+    </div>
+
+    <!-- Voice Modal -->
+    <div class="voice-modal" id="voiceModal">
+        <div class="voice-modal-content">
+            <div class="voice-pulse"><i class="fas fa-microphone"></i></div>
+            <p>Listening...</p>
+            <button class="voice-stop-btn" id="voiceStopBtn">Stop Recording</button>
+        </div>
+    </div>
+
+    <!-- Scroll to bottom button -->
+    <button class="scroll-bottom-btn" id="scrollBottomBtn"><i class="fas fa-chevron-down"></i></button>
+
+    <script src="faq-data.js"></script>
+    <script src="chatbot.js"></script>
+</body>
+</html>

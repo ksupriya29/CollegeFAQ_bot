@@ -151,6 +151,5 @@ This project is licensed under the MIT License. See the LICENSE file for details
 
 Built with ❤️ as part of the GenAI & Agentic AI Engineering Programme.
 
-=======
 # CollegeFAQ_bot
 
